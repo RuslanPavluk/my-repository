@@ -10,14 +10,14 @@ var (
 
 func main() {
 	//задаем переменную для количества яблок
-	var amountApple float32 = 9.0
+	var amountApple int = 9.0
 	//задаем переменную "цена заданного количества яблок". для этого цену одного яблока умножаем на количество 
-	priceAnyApple:=priceApple*amountApple
+	priceAnyApple:=float32(priceApple)*float32(amountApple)
 	
 	//задаем переменную для количества груш
-	var amountPear float32 = 8.0
+	var amountPear int = 8.0
 	//задаем переменную "цена заданного количества груш". для этого цену одной груши умножаем на количество 
-	priceAnyPear:=pricePear*amountPear
+	priceAnyPear:=float32(pricePear)*float32(amountPear)
 
 	fmt.Println("стоимость заданного количества яблок -", priceAnyApple)
 	fmt.Println("стоимость заданного количества груш -", priceAnyPear)

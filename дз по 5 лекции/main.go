@@ -2,50 +2,36 @@ package main
 
 import "fmt"
 
-var (
+const (
 	priceApple float32 = 5.99
 	pricePear  float32  = 7.0
 	myMoney    float32  = 26.0
 )
 
 func main() {
-	//задаем переменную для количества яблок
-	var amountApple int = 9.0
-	//задаем переменную "цена заданного количества яблок". для этого цену одного яблока умножаем на количество 
-	priceAnyApple:=float32(priceApple)*float32(amountApple)
+	amountApple:= 9 
+	applesCost1:=float32(priceApple)*float32(amountApple)
 	
-	//задаем переменную для количества груш
-	var amountPear int = 8.0
-	//задаем переменную "цена заданного количества груш". для этого цену одной груши умножаем на количество 
-	priceAnyPear:=float32(pricePear)*float32(amountPear)
+	amountPear:= 8 
+	pearsCost1:=float32(pricePear)*float32(amountPear)
 
-	fmt.Println("стоимость заданного количества яблок -", priceAnyApple)
-	fmt.Println("стоимость заданного количества груш -", priceAnyPear)
+	fmt.Println("стоимость заданного количества яблок -", applesCost1)
+	fmt.Println("стоимость заданного количества груш -", pearsCost1)
 	
-	fmt.Println("сколько нужно потратить денег, чтобы купить заданное количество яблок и груш?-", priceAnyApple+priceAnyPear)
+	fmt.Println("сколько нужно потратить денег, чтобы купить заданное количество яблок и груш?-", applesCost1+pearsCost1)
 	
-	fmt.Println("сколько груш мы можем купить?-", int(myMoney)/int(pricePear))
+	fmt.Println("сколько груш мы можем купить?-", myMoney/pricePear)
 	
-	fmt.Println("сколько яблок мы можем купить?-", int(myMoney)/int(priceApple))
+	fmt.Println("сколько яблок мы можем купить?-", myMoney/priceApple)
 
-	//задаем переменную для количества яблок
-	var quantityApple int = 2.0
-	//задаем переменную "цена заданного количества яблок". для этого цену одного яблока умножаем на количество 
-	priceAnyQuantityApple := float32(priceApple) * float32(quantityApple)
-	
-	//задаем переменую для количества груш
-	var quantityPear int = 2.0
-	//задаем переменную "цена заданного количества груш". для этого цену одной груши умножаем на количество 
-	priceAnyQuantityPear := float32(pricePear) * float32(quantityPear)
-		
-	fmt.Println("сколько стоит заданное количество яблок?-", priceAnyQuantityApple)
-	
-	fmt.Println("сколько стоит заданное количество груш?-", priceAnyQuantityPear)
+	amountApple= 2
+	applesCost2:=float32(priceApple)*float32(amountApple)
+	amountPear=2 
+	pearsCost2 := float32(pricePear) * float32(amountPear)
+	fmt.Println("сколько стоит заданное количество яблок?-", applesCost2)
+	fmt.Println("сколько стоит заданное количество груш?-", pearsCost2)
 
-	//нам нужна суммарная стоимость  яблок и  груш. для этого складываем стоимость  яблок и стоимость  груш
-	sum := priceAnyQuantityApple + priceAnyQuantityPear
-	
-	//нам нужно понимать, можем ли мы купить, за указанную у нас сумму денег, нужное количество яблок и груш. для этого мы сравниваем нашу указанную сумму денег и сумму стоимости 2 яблок и 2 груш. если наше условие выполняется, то вернется "true". если же нет-вернется "falce"
+	sum :=applesCost2 + pearsCost2
 	ourPurchase := myMoney >= sum
-	fmt.Println("можем ли мы купить два яблока и две груши?-", ourPurchase)
-}
+	fmt.Println("можем ли мы купить заданное количество яблок и груш?-", ourPurchase)
+ }
